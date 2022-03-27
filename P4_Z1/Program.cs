@@ -5,3 +5,5 @@ BazaDanych Northwind = new BazaDanych(@"Data Source=DESKTOP-9K2SBT4;Initial Cata
 
 
 Northwind.DodajWpis();
+Northwind.WyswietlDane();
+

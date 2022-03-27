@@ -33,5 +33,20 @@ namespace P4_Z1
             insertCommand.ExecuteNonQuery();
             _connection.Close();
         }
+        public void WyswietlDane()
+        {
+            _connection.Open();
+            var zapytanie = "SELECT * FROM mg.Kategorie";
+            var command = new SqlCommand(zapytanie, _connection);
+            var reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Console.Write(reader.GetInt32(0) + "   ");
+                Console.Write(reader.GetString(1) + "          ");
+                Console.WriteLine(reader.GetString(2) + "        ");
+            }
+            _connection.Close();
+        }
     }
 }
